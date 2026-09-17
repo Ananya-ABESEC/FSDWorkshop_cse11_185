@@ -1,7 +1,14 @@
-import http, { createServer } from "http";
-const server = http.createServer((req, res)=> {
+import http from 'http';
 
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(`Hello, World!`);
 });
-server.listen(3000, ()=> {
-    console.log("Server is running on code no. 3000")
+
+const port = 5000;
+server.listen(port, () => {
+  
+    const message = `Server is running on http://localhost:${port}/`;
+    console.log(message);
+ 
 });
